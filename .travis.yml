@@ -2,10 +2,7 @@ language: node_js
 node_js:
   - 'node' # use latest stable nodejs version
 before_script:
-  - sudo cp /etc/redis/redis.conf /etc/redis/redis.custom.conf
-  - sudo chmod 755 /etc/redis/redis.custom.conf
-  - sudo echo notify-keyspace-events \"Ex\" >> /etc/redis/redis.custom.conf
-  - sudo redis-server /etc/redis/redis.custom.conf
+  - sudo redis-server /etc/redis/redis.conf --notify-keyspace-events Ex
 script:
   - npm run coverage # jest test with coverage flag does coverage too
 after_script:
