@@ -25,3 +25,5 @@ test('Should greet with message', async () => {
   expect(res2).toBeFalsy();
   timer.distroy();
 });
+
+afterAll(() => setTimeout(() => process.exit(), 1000))
