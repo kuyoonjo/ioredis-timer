@@ -24,6 +24,5 @@ test('Should greet with message', async () => {
   const res2 = await redis.get(key);
   expect(res2).toBeFalsy();
   timer.distroy();
+  setTimeout(() => process.exit(), 1000);
 });
-
-afterAll(() => setTimeout(() => process.exit(), 1000))
