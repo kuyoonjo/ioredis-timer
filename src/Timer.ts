@@ -1,5 +1,5 @@
-import { EventEmitter } from "events";
-import { Redis } from "ioredis";
+import { EventEmitter } from 'events';
+import { Redis } from 'ioredis';
 import * as uuid from 'uuid/v1';
 
 const REDIS_KEY_IDENTIFIER = '__redistimer__';
