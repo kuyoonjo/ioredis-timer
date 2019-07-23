@@ -10,7 +10,7 @@ This module allows you do `settimeout` in cluster mode.
 
 ```ts
 import * as Redis from 'ioredis';
-import { Timer } from '../src/Timer';
+import { Timer } from 'ioredis-timer';
 
 const redis = new Redis({
   host: 'localhost',
