@@ -1,19 +1,20 @@
 {
-  "name": "set-redis-timeout",
+  "name": "ioredis-timer",
   "version": "1.0.0",
-  "description": "Typescript Module Template",
+  "description": "Ioredis Timer",
   "license": "MIT",
-  "repository": "https://github.com/kuyoonjo/set-ioredis-timeout.git",
+  "repository": "https://github.com/kuyoonjo/ioredis-timer.git",
   "author": {
     "name": "Yu Chen",
     "email": "yu@chen.news",
     "url": "https://yu.chen.news"
   },
   "keywords": [
+    "ioredis",
+    "redis",
+    "timer",
+    "timeout",
     "typescript",
-    "generator",
-    "node",
-    "module",
     "javascript",
     "js"
   ],

@@ -1,27 +1,27 @@
-[![Build Status](https://travis-ci.org/kuyoonjo/typescript-module-template.svg?branch=master)](https://travis-ci.org/kuyoonjo/typescript-module-template.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/kuyoonjo/typescript-module-template/badge.svg?branch=master)](https://coveralls.io/github/kuyoonjo/typescript-module-template?branch=master)
+[![Build Status](https://travis-ci.org/kuyoonjo/ioredis-timer.svg?branch=master)](https://travis-ci.org/kuyoonjo/ioredis-timer.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/kuyoonjo/ioredis-timer/badge.svg?branch=master)](https://coveralls.io/github/kuyoonjo/ioredis-timer?branch=master)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-# Typescript Module Template
+# Ioredis Timer
 
-A template for creating Nodejs Modules.
+This module allows you do `settimeout` in cluster mode.
 
-## How to start
+## Usage
 
-```bash
-git clone https://github.com/kuyoonjo/typescript-module-template.git
-cd typescript-module-template
-npm run build
-npm run coverage
+```ts
+import * as Redis from 'ioredis';
+import { Timer } from '../src/Timer';
+
+const redis = new Redis({
+  host: 'localhost',
+  port: 6379,
+});
+const timer = new Timer(redis);
+
+timer.on('delivery', async id => {
+  console('do delevery here');
+  timer.finish('delivery', id);
+});
+timer.setTimeout('delivery', 1000);
+
 ```
-
-## Publish
-
-```bash
-npm publish
-```
-
-## Setting travis and coveralls badges
-1. Sign in to [travis](https://travis-ci.org/) and activate the build for your project.
-2. Sign in to [coveralls](https://coveralls.io/) and activate the build for your project.
-3. Replace kuyoonjo/typescript-module-template with your repo details like: "your_github_username/repo_name".
