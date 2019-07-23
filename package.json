@@ -30,8 +30,8 @@
     "prepublishOnly": "npm run build",
     "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
     "build": "tsc --pretty",
-    "test": "jest --detectOpenHandles",
-    "coverage": "jest --detectOpenHandles --coverage",
+    "test": "jest --detectOpenHandles --forceExit",
+    "coverage": "jest --detectOpenHandles --forceExit --coverage",
     "watch": "npm run build -- --watch",
     "watch:test": "jest --watch"
   },
